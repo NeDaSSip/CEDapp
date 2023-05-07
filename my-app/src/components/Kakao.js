@@ -1,15 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { actionCreators as userActions } from "../modules/user";
+import axios from "axios";
 
-const kakaoSocial = (props) => {
-    const dispatch = useDispatch();
-
+const kakaoSocial = () => {
     let code = new URL(window.location.href).searchParams.get("code");
 
-    React.useEffect(async () => {
-        await dispatch(userActions.kakaoLogin(code));
-    }, []);
+    axios.get(`http://34.215.66.235:8000/auth/kakao/callback?code=${code}`)
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 
     return <div></div>;
 };
