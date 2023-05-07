@@ -15,6 +15,7 @@ import Icons from './pages/Icons';
 import Grid from './pages/Grid';
 import Blank from './pages/Blank';
 import Login from './pages/Login';
+import Kakao from './components/Kakao';
 
 // const AuthRoute = ({component: Component, ...rest}) => {
 //   <Route {...rest} render={props => {
@@ -28,7 +29,8 @@ let isLoggedIn = true;
 export function onLogout() {
   isLoggedIn = false;
 }
-export function onLogin() {
+
+export function onLogIn() {
   isLoggedIn = true;
 }
 
@@ -40,7 +42,7 @@ class App extends Component {
         <div id="wrapper">
           <Nav />
           <main role="main">
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/' component={Dashboard} />
             <Route exact path='/flot-chart' component={FlotChart} />
             {/* <Route path='/morris-chart' component={MorrisChart} /> */}
             <Route exact path='/tables' component={Tables} />
@@ -54,7 +56,7 @@ class App extends Component {
             <Route exact path='/blank' component={Blank} />
             <Route exact path='/login' component={Login} />
             {/* default route */}
-            <Route exact path='/' component={Dashboard} />
+            <Route exact path='/auth/kakao/callback' component={Kakao} />
           </main>
         </div>
       ) : <Login />
