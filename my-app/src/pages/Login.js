@@ -17,7 +17,7 @@ class Login extends Component {
 							<div className="panel-heading">
 								<h3 className="panel-title">Please Sign In</h3>
 							</div>
-							<div className="panel-body">
+							<div className="panel-body">000
 								<form>
 									<fieldset>
 										{/* <!-- Change this to a button or input when using this as a form --> */}
