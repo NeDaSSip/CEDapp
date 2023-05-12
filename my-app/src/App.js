@@ -45,6 +45,7 @@ class App extends Component {
               <Nav />
               <main role="main">
                 <Route exact path='/' component={Dashboard} />
+                <Route exact path='/dashboard' component={Dashboard} />
                 <Route exact path='/flot-chart' component={FlotChart} />
                 {/* <Route path='/morris-chart' component={MorrisChart} /> */}
                 <Route exact path='/tables' component={Tables} />
